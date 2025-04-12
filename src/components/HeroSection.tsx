@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,8 +24,16 @@ const HeroSection: React.FC = () => {
         </p>
         
         <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-foreground animate-slide-up animate-once animate-fill-both animate-delay-200">
-          <span className="block">Jan Kowalski</span>
-          <span className="block mt-2 text-primary">{t.hero_title}</span>
+          <span 
+            className="block bg-gray-800/70 text-white px-4 py-2 rounded-lg mb-2"
+          >
+            Joanna Wałach
+          </span>
+          <span 
+            className="block mt-2 text-primary bg-primary/10 px-4 py-2 rounded-lg"
+          >
+            {t.hero_title}
+          </span>
         </h1>
         
         <p className="mt-6 max-w-2xl text-xl sm:text-2xl text-muted-foreground animate-slide-up animate-once animate-fill-both animate-delay-300">
@@ -82,7 +91,7 @@ public class JavaDeveloper {
     }
     
     public static void main(String[] args) {
-        JavaDeveloper me = new JavaDeveloper("Jan Kowalski");
+        JavaDeveloper me = new JavaDeveloper("Joanna Wałach");
         me.addSkill("Java");
         me.addSkill("Spring Boot");
         me.addSkill("Microservices");
