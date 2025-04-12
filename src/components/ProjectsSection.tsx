@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
@@ -164,7 +163,11 @@ const ProjectsSection: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="group animate-pulse-soft hover:animate-wiggle"
+          >
             <span>View More Projects</span>
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>

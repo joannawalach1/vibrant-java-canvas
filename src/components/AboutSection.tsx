@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FileDown, Code, Code2, Coffee } from 'lucide-react';
@@ -54,7 +53,11 @@ const AboutSection: React.FC = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {stats.map((stat, index) => (
-              <Card key={index} className="card-hover animate-zoom-in" style={{ animationDelay: `${index * 100 + 100}ms` }}>
+              <Card 
+                key={index} 
+                className="card-hover animate-zoom-in hover:animate-pulse-soft" 
+                style={{ animationDelay: `${index * 100 + 100}ms` }}
+              >
                 <CardContent className="p-6 text-center flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <stat.icon className="h-6 w-6 text-primary" />
@@ -64,7 +67,7 @@ const AboutSection: React.FC = () => {
                 </CardContent>
               </Card>
             ))}
-
+            
             <div className="relative col-span-full sm:col-span-3 h-48 mt-6 rounded-lg overflow-hidden animate-zoom-in animate-delay-400">
               <div className="absolute inset-0 bg-primary/10 backdrop-blur-sm flex items-center justify-center">
                 <div className="text-center">

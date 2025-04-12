@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowDown } from 'lucide-react';
@@ -41,14 +40,13 @@ const HeroSection: React.FC = () => {
           </Button>
         </div>
         
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-subtle-bounce">
           <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
             <ArrowDown size={24} />
           </a>
         </div>
       </div>
       
-      {/* Animated code background */}
       <div className="absolute inset-0 -z-20 opacity-5">
         <pre className="text-[0.6rem] leading-tight text-current font-mono overflow-hidden">
           {`

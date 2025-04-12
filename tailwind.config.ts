@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -123,6 +122,19 @@ export default {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        "subtle-bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" }
+        },
+        "pulse-soft": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.05)" }
+        },
+        "wiggle": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-2deg)" },
+          "75%": { transform: "rotate(2deg)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -136,6 +148,9 @@ export default {
         "slide-right": "slide-right 0.5s ease-out",
         "bounce": "bounce 2s infinite",
         "rotate": "rotate 10s linear infinite",
+        "subtle-bounce": "subtle-bounce 2s ease-in-out infinite",
+        "pulse-soft": "pulse-soft 2s ease-in-out infinite",
+        "wiggle": "wiggle 0.5s ease-in-out"
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
@@ -143,5 +158,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate")]
 } satisfies Config;
