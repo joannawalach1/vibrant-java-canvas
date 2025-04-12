@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowDown } from 'lucide-react';
@@ -13,20 +12,20 @@ const HeroSection: React.FC = () => {
       className="min-h-screen flex items-center justify-center relative pt-16 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
-        {/* Background image related to Java */}
-        <div className="absolute inset-0 bg-black/60 z-10"></div> {/* Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div> {/* Lighter overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center z-0" 
           style={{ 
             backgroundImage: "url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
             backgroundPosition: "center",
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat"
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(1.1) contrast(0.9) grayscale(0.2)"
           }}
         ></div>
-        {/* Gradient overlays for depth and visual interest */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full filter blur-3xl z-20 mix-blend-overlay"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/30 rounded-full filter blur-3xl z-20 mix-blend-overlay"></div>
+        {/* Soft blue and gray gradient overlays */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full filter blur-3xl z-20 mix-blend-overlay"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gray-500/20 rounded-full filter blur-3xl z-20 mix-blend-overlay"></div>
       </div>
       
       <div className="container px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center justify-center z-10">
@@ -34,14 +33,14 @@ const HeroSection: React.FC = () => {
           {t.hero_greeting}
         </p>
         
-        <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-white animate-slide-up animate-once animate-fill-both animate-delay-200">
+        <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 animate-slide-up animate-once animate-fill-both animate-delay-200">
           <span 
-            className="block bg-gray-900/80 text-white px-4 py-2 rounded-lg mb-2 backdrop-blur-sm border border-white/10"
+            className="block bg-white/70 text-gray-900 px-4 py-2 rounded-lg mb-2 backdrop-blur-sm border border-gray-300/50"
           >
             Joanna Wałach
           </span>
           <span 
-            className="block mt-2 text-primary bg-gray-900/80 px-4 py-2 rounded-lg backdrop-blur-sm border border-primary/20"
+            className="block mt-2 text-blue-600 bg-white/70 px-4 py-2 rounded-lg backdrop-blur-sm border border-blue-200/50"
           >
             {t.hero_title}
           </span>
