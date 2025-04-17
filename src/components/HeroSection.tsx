@@ -33,14 +33,10 @@ const HeroSection: React.FC = () => {
         </p>
         
         <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 animate-slide-up animate-once animate-fill-both animate-delay-200">
-          <span 
-            className="block bg-white/80 text-gray-900 px-4 py-2 rounded-lg mb-2 backdrop-blur-sm border border-gray-200"
-          >
+          <span className="block text-gray-900">
             Inż. Joanna Wałach
           </span>
-          <span 
-            className="block mt-2 text-blue-600 bg-white/80 px-4 py-2 rounded-lg backdrop-blur-sm border border-blue-100"
-          >
+          <span className="block mt-2 text-blue-600">
             Java Software Developer
           </span>
         </h1>

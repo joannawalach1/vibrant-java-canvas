@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Code2, 
@@ -10,65 +9,63 @@ import {
   Users,
   CheckCircle2
 } from 'lucide-react';
-import { Progress } from '@/components/ui/progress';
 
 const SkillsSection: React.FC = () => {
   const { t } = useLanguage();
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   const skillCategories = [
     {
       name: 'Core',
       icon: Code2,
       skills: [
-        { name: t.skills_java, value: 95 },
-        { name: t.skills_spring, value: 90 },
-        { name: t.skills_hibernate, value: 85 },
+        { name: t.skills_java, description: "Expert level in Java development with strong focus on Java 8+ features and best practices." },
+        { name: t.skills_spring, description: "Extensive experience with Spring Framework, Spring Boot, and Spring Cloud." },
+        { name: t.skills_hibernate, description: "Proficient in ORM and database management using Hibernate/JPA." },
       ],
     },
     {
       name: 'Data',
       icon: Database,
       skills: [
-        { name: t.skills_sql, value: 85 },
-        { name: 'MongoDB', value: 75 },
-        { name: 'Redis', value: 70 },
+        { name: t.skills_sql, description: "Advanced SQL knowledge, database design, and optimization." },
+        { name: 'MongoDB', description: "Experience with NoSQL databases and document-based storage." },
+        { name: 'Redis', description: "Caching and in-memory data structure store implementation." },
       ],
     },
     {
       name: 'Architecture',
       icon: Server,
       skills: [
-        { name: t.skills_rest, value: 90 },
-        { name: t.skills_microservices, value: 85 },
-        { name: 'Design Patterns', value: 80 },
+        { name: t.skills_rest, description: "Design and implementation of RESTful APIs following best practices." },
+        { name: t.skills_microservices, description: "Microservices architecture design and implementation." },
+        { name: 'Design Patterns', description: "Strong knowledge of software design patterns and principles." },
       ],
     },
     {
       name: 'DevOps',
       icon: Cloud,
       skills: [
-        { name: t.skills_docker, value: 80 },
-        { name: 'Jenkins', value: 75 },
-        { name: t.skills_aws, value: 70 },
+        { name: t.skills_docker, description: "Container orchestration and deployment using Docker." },
+        { name: 'Jenkins', description: "CI/CD pipeline setup and maintenance." },
+        { name: t.skills_aws, description: "Cloud infrastructure management using AWS services." },
       ],
     },
     {
       name: 'Tools',
       icon: GitBranchPlus,
       skills: [
-        { name: t.skills_git, value: 90 },
-        { name: 'Maven/Gradle', value: 85 },
-        { name: 'IntelliJ IDEA', value: 95 },
+        { name: t.skills_git, description: "Version control and collaborative development using Git." },
+        { name: 'Maven/Gradle', description: "Build automation and dependency management." },
+        { name: 'IntelliJ IDEA', description: "Advanced IDE usage and optimization." },
       ],
     },
     {
       name: 'Soft Skills',
       icon: Users,
       skills: [
-        { name: t.skills_agile, value: 90 },
-        { name: 'Communication', value: 85 },
-        { name: 'Problem Solving', value: 95 },
+        { name: t.skills_agile, description: "Agile methodologies and Scrum framework experience." },
+        { name: 'Communication', description: "Strong written and verbal communication skills." },
+        { name: 'Problem Solving', description: "Analytical thinking and efficient problem-solving abilities." },
       ],
     },
   ];
@@ -100,30 +97,15 @@ const SkillsSection: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div 
-                    key={skill.name}
-                    className="group"
-                    onMouseEnter={() => setHoveredSkill(skill.name)}
-                    onMouseLeave={() => setHoveredSkill(null)}
-                  >
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium flex items-center">
-                        <CheckCircle2 className="h-4 w-4 mr-1 text-primary" />
-                        {skill.name}
-                      </span>
-                      <span className="text-sm text-muted-foreground">
-                        {skill.value}%
-                      </span>
+                {category.skills.map((skill) => (
+                  <div key={skill.name} className="group">
+                    <div className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
+                      <div>
+                        <h4 className="font-medium text-base">{skill.name}</h4>
+                        <p className="text-sm text-muted-foreground mt-1">{skill.description}</p>
+                      </div>
                     </div>
-                    <Progress 
-                      value={hoveredSkill === skill.name ? skill.value : 0} 
-                      className="h-2 group-hover:animate-pulse transition-all duration-1000 ease-out"
-                      style={{
-                        '--progress-value': hoveredSkill === skill.name ? skill.value : 0,
-                        '--animation-delay': `${skillIndex * 100}ms`,
-                      } as React.CSSProperties}
-                    />
                   </div>
                 ))}
               </div>
