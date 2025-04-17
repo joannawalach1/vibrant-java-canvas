@@ -11,17 +11,17 @@ const AboutSection: React.FC = () => {
   const stats = [
     { 
       value: '3+', 
-      label: 'Years Learning Java', 
+      label: t.about_experience, 
       icon: Code 
     },
     { 
       value: '3', 
-      label: 'Major Projects', 
+      label: t.about_projects, 
       icon: Code2 
     },
     { 
       value: '2', 
-      label: 'Frontend Projects', 
+      label: t.about_clients, 
       icon: Coffee 
     },
   ];
@@ -39,11 +39,7 @@ const AboutSection: React.FC = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground animate-slide-right animate-delay-100">
-              For me, Java is not just a tool, but a true passion that I happily employ to create creative solutions. In addition to Java, I'm also interested in microservices and enjoy exploring their implementation.
-            </p>
-            
-            <p className="text-lg text-muted-foreground animate-slide-right animate-delay-200">
-              I have experience using various technologies such as React, WordPress, and tools like Git, Visual Studio Code, and IntelliJ IDEA. My fluency in English and experience in international work environments help me communicate effectively and adapt quickly to changing conditions.
+              {t.about_description}
             </p>
             
             <Button className="mt-8 animate-slide-right animate-delay-300">

@@ -5,14 +5,14 @@ import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com' },
     { icon: Linkedin, href: 'https://linkedin.com' },
     { icon: Twitter, href: 'https://twitter.com' },
-    { icon: Mail, href: 'mailto:contact@example.com' },
+    { icon: Mail, href: 'mailto:joanna.walach@op.pl' },
   ];
 
   return (
@@ -25,8 +25,9 @@ const Footer: React.FC = () => {
               <span className="text-foreground">Dev</span>
             </a>
             <p className="mt-2 text-sm text-muted-foreground max-w-md">
-              Senior Java Developer building robust and scalable enterprise applications.
-              Always learning, always growing.
+              {language === 'pl' 
+                ? 'Java Developer budująca solidne i skalowalne aplikacje. Zawsze się uczę, zawsze rozwijam.'
+                : 'Java Developer building robust and scalable applications. Always learning, always growing.'}
             </p>
           </div>
 
@@ -48,12 +49,12 @@ const Footer: React.FC = () => {
             </div>
             <div className="text-sm text-muted-foreground text-center md:text-right">
               <p>
-                &copy; {currentYear} Jan Kowalski. {t.footer_rights}.
+                &copy; {currentYear} Joanna Wałach. {t.footer_rights}.
               </p>
               <p className="mt-1 flex items-center justify-center md:justify-end">
-                Made with 
+                {language === 'pl' ? 'Stworzone z' : 'Made with'} 
                 <Heart className="h-3 w-3 mx-1 text-red-500 animate-pulse" /> 
-                in Poland
+                {language === 'pl' ? 'w Polsce' : 'in Poland'}
               </p>
             </div>
           </div>

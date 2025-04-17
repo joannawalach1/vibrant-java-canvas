@@ -150,10 +150,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       ? storedLang 
       : (browserLang === 'pl' ? 'pl' : 'en');
     
+    console.log('Initial language:', initialLang, 'Browser:', browserLang, 'Stored:', storedLang);
     setLanguage(initialLang);
+    // Make sure to set translations immediately on init
+    setT(initialLang === 'pl' ? translations.pl : translations.en);
   }, []);
   
   useEffect(() => {
+    console.log('Language changed to:', language);
+    
     // Make sure we're using the correct translations object based on the language
     if (language === 'pl') {
       setT(translations.pl);
@@ -167,7 +172,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     
     // Force re-render by adding a small delay
     setTimeout(() => {
-      console.log('Language changed to:', language);
+      console.log('Translations updated:', language);
     }, 10);
   }, [language]);
   

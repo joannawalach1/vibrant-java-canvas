@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ArrowDown } from 'lucide-react';
@@ -35,20 +36,20 @@ const HeroSection: React.FC = () => {
             Joanna Wałach
           </span>
           <span className="block mt-2 text-primary text-3xl sm:text-4xl md:text-5xl">
-            Java Developer Candidate
+            {t.hero_title}
           </span>
         </h1>
         
         <p className="mt-6 max-w-2xl text-xl sm:text-2xl text-gray-700 text-center animate-slide-up animate-once animate-fill-both animate-delay-300">
-          As an enthusiastic Java programmer, I love challenges and strive to turn them into inspiring opportunities.
+          {t.hero_subtitle}
         </p>
         
         <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-slide-up animate-once animate-fill-both animate-delay-400">
           <Button size="lg" className="bg-primary hover:bg-primary/90">
-            View Projects
+            {t.hero_cta}
           </Button>
           <Button variant="outline" size="lg">
-            Contact Me
+            {t.nav_contact}
           </Button>
         </div>
         

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
@@ -11,7 +12,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string; // For now, this will be a placeholder
+  image: string;
   category: Exclude<ProjectCategory, 'all'>[];
   technologies: string[];
   demoUrl?: string;
@@ -19,14 +20,17 @@ interface Project {
 }
 
 const ProjectsSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('all');
+  console.log('ProjectsSection language:', language);
 
   const projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A scalable microservices-based e-commerce platform built with Spring Boot and React.',
+      title: language === 'pl' ? 'Platforma E-Commerce' : 'E-Commerce Platform',
+      description: language === 'pl' 
+        ? 'Skalowalna platforma e-commerce oparta na mikrousługach, zbudowana za pomocą Spring Boot i React.'
+        : 'A scalable microservices-based e-commerce platform built with Spring Boot and React.',
       image: 'project1',
       category: ['backend', 'web'],
       technologies: ['Java', 'Spring Boot', 'MySQL', 'React', 'Docker'],
@@ -35,8 +39,10 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Banking API',
-      description: 'Secure RESTful API for online banking services with transaction management.',
+      title: language === 'pl' ? 'API Bankowe' : 'Banking API',
+      description: language === 'pl'
+        ? 'Bezpieczne API RESTful dla usług bankowości internetowej z zarządzaniem transakcjami.'
+        : 'Secure RESTful API for online banking services with transaction management.',
       image: 'project2',
       category: ['backend'],
       technologies: ['Java', 'Spring Security', 'PostgreSQL', 'JUnit', 'Swagger'],
@@ -44,8 +50,10 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 3,
-      title: 'Weather Mobile App',
-      description: 'Cross-platform mobile application for real-time weather forecasts.',
+      title: language === 'pl' ? 'Aplikacja Pogodowa' : 'Weather Mobile App',
+      description: language === 'pl'
+        ? 'Wieloplatformowa aplikacja mobilna do prognoz pogody w czasie rzeczywistym.'
+        : 'Cross-platform mobile application for real-time weather forecasts.',
       image: 'project3',
       category: ['mobile'],
       technologies: ['Java', 'Android SDK', 'Retrofit', 'OpenWeatherMap API'],
@@ -54,8 +62,10 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 4,
-      title: 'Task Management System',
-      description: 'Full-stack task management application with real-time updates.',
+      title: language === 'pl' ? 'System Zarządzania Zadaniami' : 'Task Management System',
+      description: language === 'pl'
+        ? 'Aplikacja do zarządzania zadaniami full-stack z aktualizacjami w czasie rzeczywistym.'
+        : 'Full-stack task management application with real-time updates.',
       image: 'project4',
       category: ['web', 'backend'],
       technologies: ['Java', 'Spring Boot', 'WebSockets', 'Angular', 'MongoDB'],
@@ -64,8 +74,10 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 5,
-      title: 'Inventory Management API',
-      description: 'Backend API for inventory tracking and management for retail stores.',
+      title: language === 'pl' ? 'API Zarządzania Inwentarzem' : 'Inventory Management API',
+      description: language === 'pl'
+        ? 'Backend API do śledzenia i zarządzania zapasami dla sklepów detalicznych.'
+        : 'Backend API for inventory tracking and management for retail stores.',
       image: 'project5',
       category: ['backend'],
       technologies: ['Java', 'Spring Data', 'MySQL', 'Redis', 'Docker'],
@@ -73,8 +85,10 @@ const ProjectsSection: React.FC = () => {
     },
     {
       id: 6,
-      title: 'Fitness Tracker App',
-      description: 'Mobile application for tracking workouts and health metrics.',
+      title: language === 'pl' ? 'Aplikacja do Śledzenia Aktywności Fizycznej' : 'Fitness Tracker App',
+      description: language === 'pl'
+        ? 'Aplikacja mobilna do śledzenia treningów i wskaźników zdrowia.'
+        : 'Mobile application for tracking workouts and health metrics.',
       image: 'project6',
       category: ['mobile'],
       technologies: ['Java', 'Android', 'Room Database', 'Google Fit API'],
@@ -168,7 +182,7 @@ const ProjectsSection: React.FC = () => {
             size="lg" 
             className="group animate-pulse-soft hover:animate-wiggle"
           >
-            <span>View More Projects</span>
+            <span>{language === 'pl' ? 'Zobacz więcej projektów' : 'View More Projects'}</span>
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
