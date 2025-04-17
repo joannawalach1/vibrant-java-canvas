@@ -144,15 +144,31 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     // Get browser language
     const browserLang = navigator.language.split('-')[0] as Language;
     const storedLang = localStorage.getItem('language') as Language;
-    const initialLang = storedLang || (browserLang === 'pl' ? 'pl' : 'en');
+    
+    // Only use browserLang or storedLang if they're valid options ('en' or 'pl')
+    const initialLang = storedLang && (storedLang === 'en' || storedLang === 'pl') 
+      ? storedLang 
+      : (browserLang === 'pl' ? 'pl' : 'en');
     
     setLanguage(initialLang);
   }, []);
   
   useEffect(() => {
-    setT(translations[language]);
+    // Make sure we're using the correct translations object based on the language
+    if (language === 'pl') {
+      setT(translations.pl);
+    } else {
+      setT(translations.en);
+    }
+    
+    // Store the selected language in localStorage
     localStorage.setItem('language', language);
     document.documentElement.lang = language;
+    
+    // Force re-render by adding a small delay
+    setTimeout(() => {
+      console.log('Language changed to:', language);
+    }, 10);
   }, [language]);
   
   return (

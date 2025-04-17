@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, Languages, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -27,6 +28,11 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLanguageChange = (newLang: 'en' | 'pl') => {
+    console.log('Changing language to:', newLang);
+    setLanguage(newLang);
   };
 
   const navLinks = [
@@ -78,10 +84,10 @@ const Navbar: React.FC = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                <DropdownMenuItem onClick={() => handleLanguageChange('en')}>
                   <span className={language === 'en' ? 'font-bold' : ''}>English</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('pl')}>
+                <DropdownMenuItem onClick={() => handleLanguageChange('pl')}>
                   <span className={language === 'pl' ? 'font-bold' : ''}>Polski</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -149,7 +155,7 @@ const Navbar: React.FC = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                onClick={() => setLanguage(language === 'en' ? 'pl' : 'en')}
+                onClick={() => handleLanguageChange(language === 'en' ? 'pl' : 'en')}
               >
                 <Languages className="h-4 w-4 mr-2" />
                 {language === 'en' ? 'Polski' : 'English'}

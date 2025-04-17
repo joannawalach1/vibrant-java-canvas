@@ -35,7 +35,7 @@ const AboutSection: React.FC = () => {
             data-aos="fade-right"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 animate-slide-up">
-              About Me
+              {t.about_title}
             </h2>
             
             <p className="text-lg text-muted-foreground animate-slide-right animate-delay-100">
@@ -48,7 +48,7 @@ const AboutSection: React.FC = () => {
             
             <Button className="mt-8 animate-slide-right animate-delay-300">
               <FileDown className="mr-2 h-4 w-4" />
-              Download CV
+              {t.about_button}
             </Button>
           </div>
           
