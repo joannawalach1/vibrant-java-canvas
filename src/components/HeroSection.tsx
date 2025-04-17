@@ -12,19 +12,17 @@ const HeroSection: React.FC = () => {
       className="min-h-screen flex items-center justify-center relative pt-16 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-black/10 z-10"></div> {/* Very light overlay */}
+        <div className="absolute inset-0 bg-gray-50/80 z-10"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center z-0" 
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1544986581-efac13f0f81b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
+            backgroundImage: "url('/lovable-uploads/647f5802-3eb8-44da-ad2c-58e31dfd31fb.png')",
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            filter: "brightness(1.2) contrast(0.9) grayscale(0.6)" // Makes the image lighter and more gray
+            filter: "grayscale(0.8) brightness(1.2)"
           }}
         ></div>
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/10 rounded-full filter blur-3xl z-20 mix-blend-overlay"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gray-300/10 rounded-full filter blur-3xl z-20 mix-blend-overlay"></div>
       </div>
       
       <div className="container px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center justify-center z-10">
@@ -32,30 +30,30 @@ const HeroSection: React.FC = () => {
           {t.hero_greeting}
         </p>
         
-        <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 animate-slide-up animate-once animate-fill-both animate-delay-200">
+        <h1 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 text-center animate-slide-up animate-once animate-fill-both animate-delay-200">
           <span className="block text-gray-900">
-            Inż. Joanna Wałach
+            Joanna Wałach
           </span>
-          <span className="block mt-2 text-blue-600">
-            Java Software Developer
+          <span className="block mt-2 text-primary text-3xl sm:text-4xl md:text-5xl">
+            Java Developer Candidate
           </span>
         </h1>
         
-        <p className="mt-6 max-w-2xl text-xl sm:text-2xl text-gray-700 animate-slide-up animate-once animate-fill-both animate-delay-300">
-          {t.hero_subtitle}
+        <p className="mt-6 max-w-2xl text-xl sm:text-2xl text-gray-700 text-center animate-slide-up animate-once animate-fill-both animate-delay-300">
+          As an enthusiastic Java programmer, I love challenges and strive to turn them into inspiring opportunities.
         </p>
         
         <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-slide-up animate-once animate-fill-both animate-delay-400">
           <Button size="lg" className="bg-primary hover:bg-primary/90">
-            {t.hero_cta}
+            View Projects
           </Button>
-          <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-            {t.contact_title}
+          <Button variant="outline" size="lg">
+            Contact Me
           </Button>
         </div>
         
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-subtle-bounce">
-          <a href="#about" className="text-white hover:text-primary transition-colors">
+          <a href="#about" className="text-gray-600 hover:text-primary transition-colors">
             <ArrowDown size={24} />
           </a>
         </div>

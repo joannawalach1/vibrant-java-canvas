@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { FileDown, Code, Code2, Coffee } from 'lucide-react';
@@ -9,45 +10,45 @@ const AboutSection: React.FC = () => {
 
   const stats = [
     { 
-      value: '5+', 
-      label: t.about_experience, 
+      value: '3+', 
+      label: 'Years Learning Java', 
       icon: Code 
     },
     { 
-      value: '20+', 
-      label: t.about_projects, 
+      value: '3', 
+      label: 'Major Projects', 
       icon: Code2 
     },
     { 
-      value: '15+', 
-      label: t.about_clients, 
+      value: '2', 
+      label: 'Frontend Projects', 
       icon: Coffee 
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-secondary/50">
+    <section id="about" className="py-20 bg-background">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div 
             className="space-y-6 max-w-xl"
             data-aos="fade-right"
           >
-            <h2 className="section-title animate-slide-right">
-              {t.about_title}
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 animate-slide-up">
+              About Me
             </h2>
             
             <p className="text-lg text-muted-foreground animate-slide-right animate-delay-100">
-              {t.about_description}
+              For me, Java is not just a tool, but a true passion that I happily employ to create creative solutions. In addition to Java, I'm also interested in microservices and enjoy exploring their implementation.
             </p>
             
             <p className="text-lg text-muted-foreground animate-slide-right animate-delay-200">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              I have experience using various technologies such as React, WordPress, and tools like Git, Visual Studio Code, and IntelliJ IDEA. My fluency in English and experience in international work environments help me communicate effectively and adapt quickly to changing conditions.
             </p>
             
             <Button className="mt-8 animate-slide-right animate-delay-300">
               <FileDown className="mr-2 h-4 w-4" />
-              {t.about_button}
+              Download CV
             </Button>
           </div>
           
@@ -55,7 +56,7 @@ const AboutSection: React.FC = () => {
             {stats.map((stat, index) => (
               <Card 
                 key={index} 
-                className="card-hover animate-zoom-in hover:animate-pulse-soft" 
+                className="card-hover animate-zoom-in" 
                 style={{ animationDelay: `${index * 100 + 100}ms` }}
               >
                 <CardContent className="p-6 text-center flex flex-col items-center">
@@ -69,10 +70,14 @@ const AboutSection: React.FC = () => {
             ))}
             
             <div className="relative col-span-full sm:col-span-3 h-48 mt-6 rounded-lg overflow-hidden animate-zoom-in animate-delay-400">
-              <div className="absolute inset-0 bg-primary/10 backdrop-blur-sm flex items-center justify-center">
+              <div className="absolute inset-0 bg-primary/5 backdrop-blur-sm flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-xl font-bold mb-2">Jan Kowalski</div>
-                  <div className="text-sm text-muted-foreground">Senior Java Developer</div>
+                  <div className="text-xl font-bold mb-2">Contact Information</div>
+                  <div className="text-sm text-muted-foreground">
+                    <p>Email: joanna.walach@op.pl</p>
+                    <p>Location: Białobrzegi</p>
+                    <p>LinkedIn: Joanna Wałach</p>
+                  </div>
                 </div>
               </div>
             </div>
